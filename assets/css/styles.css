@@ -15,7 +15,7 @@ html {
 body {
     font-family: 'Raleway', Helvetica, sans-serif;
     background: #FFF;
-    color: #4D5362;
+    color: #FFF;
     min-height: 100vh;
     font-size: 100%;
     line-height: 1.5;
@@ -35,8 +35,8 @@ a:hover {
     line-height: 1;
     padding: 0.5em;
     font-size: 1em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #FFF;
+    color: #199fce;
     border-radius: 100%;
     box-shadow: 0 2px 1px rgba(0, 0, 0, .05), 0 2px 3px rgba(0, 0, 0, .05), 0 4px 8px rgba(0, 0, 0, .05);
 }
@@ -55,20 +55,28 @@ a:hover {
     justify-content: center;
 }
 
-.sidebar {
-    background-color: rgba(0,0,0,0.1);
-    border-right: 1px solid #D5DEE5;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-    overflow: auto;
+.sidebar-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
+    width: 20em;
+}
+
+.sidebar-wrapper .sidebar {
+    background-color: rgba(52, 73, 94, 0.9);
+    border-right: 1px solid #D5DEE5;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    overflow-y: scroll;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    width: 20em;
+    height: 100%;
+}
+
+.sidebar-wrapper .sidebar > * {
+    flex: 1 1;
 }
 
 .sidebar .header {
@@ -80,6 +88,8 @@ a:hover {
     justify-content: space-around;
     -webkit-align-items: center;
     align-items: center;
+    min-height: 13em;
+    margin-bottom: 1em;
 }
 
 .sidebar .header .avatar {
@@ -92,12 +102,12 @@ a:hover {
 
 .sidebar .header .title {
     font-weight: 700;
-    color: #000;
+    color: #FFF;
     font-size: 100%;
 }
 
 .sidebar .header .subtitle {
-    color: #000;
+    color: #FFF;
     font-size: 90%;
 }
 
@@ -109,23 +119,23 @@ a:hover {
     margin: 1em 0;
     -webkit-flex-direction: column;
     flex-direction: column;
+    min-height: 13em;
 }
 
-/*.sidebar .nav::before, .sidebar .nav::after {*/
-    /*content: "";*/
-    /*border-top: 1px solid #566386;*/
-    /*font-weight: 300;*/
-    /*width: 20%;*/
-    /*margin: 1em 0;*/
-/*}*/
-
 .sidebar .nav > div {
-    color: #000;
+    color: #FFF;
     font-weight: 300;
-    line-height: 2;
+    line-height: 3;
+    padding: 0 2em;
+}
+
+.sidebar .nav > div:hover {
+    background-color: #F44336;
+    border-radius: 0.5em;
 }
 
 .sidebar .social {
     -webkit-flex-direction: row;
     flex-direction: row;
+    min-height: 2em;
 }
